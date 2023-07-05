@@ -137,7 +137,7 @@ NSData *GLTFCreateImageDataFromDataURI(NSString *uriData) {
 {
     __block NSError *internalError = nil;
     __block GLTFAsset *maybeAsset = nil;
-    dispatch_semaphore_t loadSemaphore = dispatch_semaphore_create(1);
+    dispatch_semaphore_t loadSemaphore = dispatch_semaphore_create(0);
     [self loadAssetWithData:data options:options handler:^(float progress,
                                                          GLTFAssetStatus status,
                                                          GLTFAsset *asset,
